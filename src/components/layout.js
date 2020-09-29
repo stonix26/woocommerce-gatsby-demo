@@ -7,44 +7,31 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "./header"
-import "./layout.css"
+import { Container, Row, Col } from "react-bootstrap"
 
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+import Navbar from "./navBar"
 
-  return (
-    <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer style={{
-          marginTop: `2rem`
-        }}>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
-      </div>
-    </>
-  )
-}
+const Layout = ({ children, pageInfo }) => (
+  <>
+    <Container fluid className="px-0 main">
+      <Navbar pageInfo={pageInfo} />
+      <main>{children}</main>
+    </Container>
+    <Container fluid className="px-0">
+      <Row noGutters>
+        <Col className="footer-col">
+          <footer>
+            <span>
+              &copy; {new Date().getFullYear()}{" "}
+              {`Mana. All Rights Reserved. Powered by {dna:micro}`}
+            </span>
+          </footer>
+        </Col>
+      </Row>
+    </Container>
+  </>
+)
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,

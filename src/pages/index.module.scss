@@ -1,0 +1,18 @@
+@import "../styles/style.scss";
+
+.banner-container {
+  min-height: 70vh;
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: overlay;
+  background-color: #000000bf;
+
+  display: flex;
+  align-items: center;
+
+  .btn-cta {
+    background-color: $color-primary;
+    color: white;
+    padding: 1em;
+  }
+}
