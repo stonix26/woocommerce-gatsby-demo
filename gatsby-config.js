@@ -8,7 +8,7 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress-experimental`,
       options: {
-        url: `http://woocommercegatsby.local/graphql`,
+        url: `http://gastby-woocommerce.local/graphql`,
       },
     },
     `gatsby-plugin-react-helmet`,

@@ -6,13 +6,169 @@
   background-size: cover;
   background-blend-mode: overlay;
   background-color: #000000bf;
+  color: white;
 
   display: flex;
   align-items: center;
 
+  p {
+    font-size: 1.5em;
+    line-height: 1.2em;
+  }
+
+  h1 {
+    margin-bottom: 4rem;
+    font-size: 6em;
+    line-height: 0.75em;
+
+    span {
+      font-size: 0.5em;
+    }
+  }
+
   .btn-cta {
     background-color: $color-primary;
     color: white;
-    padding: 1em;
+    padding: 0.8rem 2.5rem;
+    border-radius: 2rem;
+    text-decoration: none;
+  }
+}
+
+.section-details {
+  background-color: $color-secondary;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 0;
+
+  .detail-container {
+    padding: 0 5rem;
+  }
+
+  .detail-text {
+    font-size: 2em;
+    font-weight: 500;
+  }
+
+  .col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    .icons {
+      color: $icon-color;
+      font-size: 4.2rem;
+    }
+
+    p {
+      font-size: 1em;
+      font-weight: 400;
+      margin-top: 1rem;
+      line-height: 1.2em;
+    }
+  }
+}
+
+.mana-desc-container {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+
+  h2,
+  p {
+    color: $color-secondary;
+  }
+
+  h2 {
+    font-weight: 800;
+    font-size: 2.4em;
+  }
+
+  p {
+    font-weight: 500;
+    font-size: 1em;
+    line-height: 2em;
+
+    .text-highlight {
+      color: $color-primary;
+    }
+  }
+}
+
+.product-container {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay;
+  background-color: #000000bf;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+
+  h3 {
+    text-align: center;
+    color: white;
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 4rem;
+  }
+
+  .product-card {
+    background-color: white;
+    display: block;
+    text-align: center;
+    padding: 2rem;
+
+    .product-name {
+      font-weight: 700;
+      color: $color-secondary;
+      font-size: 1.6em;
+    }
+
+    p {
+      font-size: 1.05em;
+      font-weight: 400;
+      line-height: 1em;
+    }
+
+    .price {
+      color: $color-primary;
+      font-weight: 800;
+      font-size: 1.6em;
+    }
+
+    .star-container {
+      margin-bottom: 2rem;
+
+      svg {
+        color: $star-color;
+        font-size: 1.45em;
+      }
+    }
+
+    .add-cart-btn {
+      background-color: $color-primary;
+      color: white;
+      padding: 0.8rem 2.5rem;
+      border-radius: 2rem;
+      text-decoration: none;
+    }
+  }
+  .learn-more-container {
+    display: block;
+    margin-top: 3rem;
+    align-items: center;
+    text-align: center;
+
+    .learn-btn {
+      background-color: transparent;
+      color: white;
+      padding: 0.8rem 2.5rem;
+      border: solid 1px white;
+      border-radius: 2rem;
+      text-decoration: none;
+    }
   }
 }
