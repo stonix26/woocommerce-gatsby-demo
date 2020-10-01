@@ -3,16 +3,14 @@ import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
 import { Container, Row, Col, Carousel } from "react-bootstrap"
 import { BiBrain } from "react-icons/bi"
-// import { TiTimesOutline } from "react-icons/ti"
-// import { RiHeartPulseFill } from "react-icons/ri"
-// import { BsFillDropletFill } from "react-icons/bs"
-// import { ImPlus } from "react-icons/im"
 import { AiFillStar, AiOutlineStar } from "react-icons/ai"
 import { MdNavigateBefore, MdNavigateNext } from "react-icons/md"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 import styles from "./index.module.scss"
+
+import jsonData from "../../temp/home.json"
 
 export default function Home({ data }) {
   const [index, setIndex] = useState(0)
@@ -21,9 +19,26 @@ export default function Home({ data }) {
     setIndex(selectedIndex)
   }
 
+  const {
+    seo_title,
+    banner_title,
+    banner_subtitle,
+    section_2_desc,
+    section_2_benefits,
+    section_3_title,
+    section_3_desc,
+    section_4_title,
+    section_4_products,
+    section_5_title,
+    section_5_content,
+    section_6_title,
+    section_6_content,
+    section_7,
+  } = jsonData
+
   return (
     <Layout>
-      <SEO title="HOME" />
+      <SEO title={seo_title} />
       <Container
         fluid
         className={styles.bannerContainer}
@@ -32,15 +47,8 @@ export default function Home({ data }) {
         <Container>
           <Row className="align-items-center">
             <Col>
-              <p>
-                A Natural Energy Supplement that increases mental clarity, focus
-                and performance
-              </p>
-              <h1>
-                <span>That's</span>
-                <br />
-                MANA.
-              </h1>
+              <p>{banner_subtitle}</p>
+              <h1 dangerouslySetInnerHTML={{ __html: banner_title }} />
               <Link to="/blogs" className="mana-btn-primary">
                 SHOP NOW
               </Link>
@@ -53,56 +61,24 @@ export default function Home({ data }) {
         <Container className={styles.detailContainer}>
           <Row className="justify-content-md-center align-items-center pb-5">
             <Col>
-              <p className={styles.detailText}>
-                Out with the fake, in with the natural, MANA blends premium
-                plant extracts to produce the clean boost your body craves.
-              </p>
+              <p className={styles.detailText}>{section_2_desc}</p>
             </Col>
           </Row>
           <Row className="justify-content-md-center pt-4">
-            <Col className={styles.col}>
-              <BiBrain className={styles.icons} />
-              <p>Improves mood and memory</p>
-            </Col>
-            <Col className={styles.col}>
-              <BiBrain className={styles.icons} />
-              <p>No Crash or jitterness</p>
-            </Col>
-            <Col className={styles.col}>
-              <BiBrain className={styles.icons} />
-              <p>Improves athletic performance</p>
-            </Col>
-            <Col className={styles.col}>
-              <BiBrain className={styles.icons} />
-              <p>Increase general resistance to daily stress</p>
-            </Col>
-            <Col className={styles.col}>
-              <BiBrain className={styles.icons} />
-              <p>Enhances ATP production and helps increase energy levels</p>
-            </Col>
+            {section_2_benefits.map((item, index) => (
+              <Col className={styles.col} key={index}>
+                <BiBrain className={styles.icons} />
+                <p>{item.desc}</p>
+              </Col>
+            ))}
           </Row>
         </Container>
       </Container>
       <Container className={styles.manaDescContainer}>
         <Row className="align-items-center">
           <Col className="pr-5">
-            <h2>MANA</h2>
-            <p>
-              Our herbal proprietary blend replineshes you{" "}
-              <span className="text-highlight">energy</span>,{" "}
-              <span className="text-highlight">mental clarity</span> and
-              <span className="text-highlight"> focus</span> without the crash
-              or jittery feeling. <span className="text-highlight">MANA</span>{" "}
-              contains{" "}
-              <span className="text-highlight">no artificial ingredients</span>{" "}
-              and was specifically design for you.
-            </p>
-            <p>
-              Whether you are an athlete, parent, student, or a person who
-              simply needs a boost of energy throughout the day. Conquer your
-              day with
-              <span className="text-highlight"> MANA!</span>
-            </p>
+            <h2>{section_3_title}</h2>
+            <div dangerouslySetInnerHTML={{ __html: section_3_desc }} />
           </Col>
           <Col className="pl-5">
             <Img
@@ -120,7 +96,7 @@ export default function Home({ data }) {
       >
         <Row>
           <Col>
-            <h3>OUR PRODUCTS</h3>
+            <h3>{section_4_title}</h3>
           </Col>
         </Row>
         <Carousel
@@ -135,197 +111,60 @@ export default function Home({ data }) {
             <MdNavigateBefore style={{ fontSize: "2.5em", opacity: "0.75" }} />
           }
         >
-          <Carousel.Item>
-            <Container>
-              <Row>
-                <Col>
-                  <div className={styles.productCard}>
-                    <p className={styles.productName}>Mana (30 Capsules)</p>
-                    <Img
-                      fluid={data.manaBottle.childImageSharp.fluid}
-                      objectFit="cover"
-                      alt="Mana"
-                    />
-                    <p>Lorem ipsum dolor sit amet, consectetur</p>
-                    <p className={styles.price}>$34.99</p>
-                    <div className={styles.starContainer}>
-                      <AiFillStar />
-                      <AiFillStar />
-                      <AiFillStar />
-                      <AiFillStar />
-                      <AiOutlineStar />
-                    </div>
-                    <Link to="/" className="mana-btn-primary">
-                      ADD TO CART
-                    </Link>
-                  </div>
-                  <div className={styles.learnMoreContainer}>
-                    <Link to="/" className="mana-transparent-btn">
-                      LEARN MORE
-                    </Link>
-                  </div>
-                </Col>
-                <Col>
-                  <div className={styles.productCard}>
-                    <p className={styles.productName}>Mana 3x Supply</p>
-                    <Img
-                      fluid={data.manaBottle.childImageSharp.fluid}
-                      objectFit="cover"
-                      alt="Mana"
-                    />
-                    <p>Lorem ipsum dolor sit amet, consectetur</p>
-                    <p className={styles.price}>$53.99</p>
-                    <div className={styles.starContainer}>
-                      <AiFillStar />
-                      <AiFillStar />
-                      <AiFillStar />
-                      <AiFillStar />
-                      <AiFillStar />
-                    </div>
-                    <Link to="/" className="mana-btn-primary">
-                      ADD TO CART
-                    </Link>
-                  </div>
-                  <div className={styles.learnMoreContainer}>
-                    <Link to="/" className="mana-transparent-btn">
-                      LEARN MORE
-                    </Link>
-                  </div>
-                </Col>
-                <Col>
-                  <div className={styles.productCard}>
-                    <p className={styles.productName}>Mana Case</p>
-                    <Img
-                      fluid={data.manaBottle.childImageSharp.fluid}
-                      objectFit="cover"
-                      alt="Mana"
-                    />
-                    <p>Lorem ipsum dolor sit amet, consectetur</p>
-                    <p className={styles.price}>$191.99</p>
-                    <div className={styles.starContainer}>
-                      <AiFillStar />
-                      <AiFillStar />
-                      <AiFillStar />
-                      <AiFillStar />
-                      <AiOutlineStar />
-                    </div>
-                    <Link to="/" className="mana-btn-primary">
-                      ADD TO CART
-                    </Link>
-                  </div>
-                  <div className={styles.learnMoreContainer}>
-                    <Link to="/" className="mana-transparent-btn">
-                      LEARN MORE
-                    </Link>
-                  </div>
-                </Col>
-              </Row>
-            </Container>
-          </Carousel.Item>
-          <Carousel.Item>
-            <Container>
-              <Row>
-                <Col>
-                  <div className={styles.productCard}>
-                    <p className={styles.productName}>Mana (30 Capsules)</p>
-                    <Img
-                      fluid={data.manaBottle.childImageSharp.fluid}
-                      objectFit="cover"
-                      alt="Mana"
-                    />
-                    <p>Lorem ipsum dolor sit amet, consectetur</p>
-                    <p className={styles.price}>$34.99</p>
-                    <div className={styles.starContainer}>
-                      <AiFillStar />
-                      <AiFillStar />
-                      <AiFillStar />
-                      <AiFillStar />
-                      <AiOutlineStar />
-                    </div>
-                    <Link to="/" className="mana-btn-primary">
-                      ADD TO CART
-                    </Link>
-                  </div>
-                  <div className={styles.learnMoreContainer}>
-                    <Link to="/" className="mana-transparent-btn">
-                      LEARN MORE
-                    </Link>
-                  </div>
-                </Col>
-                <Col>
-                  <div className={styles.productCard}>
-                    <p className={styles.productName}>Mana 3x Supply</p>
-                    <Img
-                      fluid={data.manaBottle.childImageSharp.fluid}
-                      objectFit="cover"
-                      alt="Mana"
-                    />
-                    <p>Lorem ipsum dolor sit amet, consectetur</p>
-                    <p className={styles.price}>$53.99</p>
-                    <div className={styles.starContainer}>
-                      <AiFillStar />
-                      <AiFillStar />
-                      <AiFillStar />
-                      <AiFillStar />
-                      <AiFillStar />
-                    </div>
-                    <Link to="/" className="mana-btn-primary">
-                      ADD TO CART
-                    </Link>
-                  </div>
-                  <div className={styles.learnMoreContainer}>
-                    <Link to="/" className="mana-transparent-btn">
-                      LEARN MORE
-                    </Link>
-                  </div>
-                </Col>
-                <Col>
-                  <div className={styles.productCard}>
-                    <p className={styles.productName}>Mana Case</p>
-                    <Img
-                      fluid={data.manaBottle.childImageSharp.fluid}
-                      objectFit="cover"
-                      alt="Mana"
-                    />
-                    <p>Lorem ipsum dolor sit amet, consectetur</p>
-                    <p className={styles.price}>$191.99</p>
-                    <div className={styles.starContainer}>
-                      <AiFillStar />
-                      <AiFillStar />
-                      <AiFillStar />
-                      <AiFillStar />
-                      <AiOutlineStar />
-                    </div>
-                    <Link to="/" className="mana-btn-primary">
-                      ADD TO CART
-                    </Link>
-                  </div>
-                  <div className={styles.learnMoreContainer}>
-                    <Link to="/" className="mana-transparent-btn">
-                      LEARN MORE
-                    </Link>
-                  </div>
-                </Col>
-              </Row>
-            </Container>
-          </Carousel.Item>
+          {section_4_products.map((slideItem, index) => (
+            <Carousel.Item key={index}>
+              <Container>
+                <Row>
+                  {slideItem.slide.map((productItem, index) => (
+                    <Col key={index}>
+                      <div className={styles.productCard}>
+                        <p className={styles.productName}>
+                          {productItem.product_name}
+                        </p>
+                        <Img
+                          fluid={data.manaBottle.childImageSharp.fluid}
+                          objectFit="cover"
+                          alt="Mana"
+                        />
+                        <p>Lorem ipsum dolor sit amet, consectetur</p>
+                        <p className={styles.price}>
+                          {productItem.product_price}
+                        </p>
+                        <div className={styles.starContainer}>
+                          <AiFillStar />
+                          <AiFillStar />
+                          <AiFillStar />
+                          <AiFillStar />
+                          <AiOutlineStar />
+                        </div>
+                        <Link to="/" className="mana-btn-primary">
+                          ADD TO CART
+                        </Link>
+                      </div>
+                      <div className={styles.learnMoreContainer}>
+                        <Link to="/" className="mana-transparent-btn">
+                          LEARN MORE
+                        </Link>
+                      </div>
+                    </Col>
+                  ))}
+                </Row>
+              </Container>
+            </Carousel.Item>
+          ))}
         </Carousel>
       </Container>
       <Container className={styles.moreProductSection}>
         <Row className="align-items-center mb-5">
           <Col md="5">
-            <p className={styles.descTitle}>
-              MANA LIFE
-              <br />
-              ENERGY SHOTS
-            </p>
-            <p className={styles.descContent}>
-              <span className="text-highlight">MANA Life shots</span> give you
-              quick energy boost in the healthiest way possible. Formulated from
-              the purest blend of natural herbs, say goodbye to jitters and
-              focus on getting an extra boost in your energy levels and
-              enhancing athletic performance every day!
-            </p>
+            <p
+              className={styles.descTitle}
+              dangerouslySetInnerHTML={{ __html: section_5_title }}
+            />
+            <p
+              className={styles.descContent}
+              dangerouslySetInnerHTML={{ __html: section_5_content }}
+            />
             <Link to="/" className="mana-btn-primary">
               READ MORE
             </Link>
@@ -347,18 +186,14 @@ export default function Home({ data }) {
             />
           </Col>
           <Col md="5">
-            <p className={styles.descTitle}>
-              MANA LIFE
-              <br />
-              IMMUNITY SHOTS
-            </p>
-            <p className={styles.descContent}>
-              <span className="text-highlight">MANA Life shots</span> are packed
-              with the healthiest ingredients to help you sustain a healthy
-              body! Whether you want to fight off colds and flu or simple
-              strenthen you immunity defense, immunity shots are your regular
-              dose of potent vitamin C.
-            </p>
+            <p
+              className={styles.descTitle}
+              dangerouslySetInnerHTML={{ __html: section_6_title }}
+            />
+            <p
+              className={styles.descContent}
+              dangerouslySetInnerHTML={{ __html: section_6_content }}
+            />
             <Link to="/" className="mana-btn-primary">
               READ MORE
             </Link>
@@ -384,27 +219,15 @@ export default function Home({ data }) {
           <Carousel.Item>
             <Container>
               <Row>
-                <Col>
-                  <Img
-                    fluid={data.benefitsImg1.childImageSharp.fluid}
-                    objectFit="cover"
-                    alt="Mana"
-                  />
-                </Col>
-                <Col>
-                  <Img
-                    fluid={data.benefitsImg2.childImageSharp.fluid}
-                    objectFit="cover"
-                    alt="Mana"
-                  />
-                </Col>
-                <Col>
-                  <Img
-                    fluid={data.benefitsImg3.childImageSharp.fluid}
-                    objectFit="cover"
-                    alt="Mana"
-                  />
-                </Col>
+                {section_7.map((item, index) => (
+                  <Col key={index}>
+                    <Img
+                      fluid={data[item.img_name].childImageSharp.fluid}
+                      objectFit="cover"
+                      alt="Mana"
+                    />
+                  </Col>
+                ))}
               </Row>
             </Container>
           </Carousel.Item>

@@ -1,0 +1,93 @@
+{
+  "seo_title": "What is the Best Supplement for Energy",
+  "banner_subtitle": "A Natural Energy Supplement that increases mental clarity, focus and performance",
+  "banner_title": "<span>That's</span><br />MANA.",
+  "section_2_desc": "Out with the fake, in with the natural, MANA blends premium plant extracts to produce the clean boost your body craves.",
+  "section_2_benefits": [
+    {
+      "desc": "Improves mood and memory"
+    },
+    {
+      "desc": "No Crash or jitterness"
+    },
+    {
+      "desc": "Improves athletic performance"
+    },
+    {
+      "desc": "Increase general resistance to daily stress"
+    },
+    {
+      "desc": "Enhances ATP production and helps increase energy levels"
+    }
+  ],
+  "section_3_title": "MANA",
+  "section_3_desc": "<p>Our herbal proprietary blend replineshes you <span class='text-highlight'>energy</span>, <span class='text-highlight'>mental clarity</span> and <span class='text-highlight'> focus</span> without the crash or jittery feeling. <span class='text-highlight'>MANA</span> contains <span class='text-highlight'>no artificial ingredients</span> and was specifically design for you. </p> <p> Whether you are an athlete, parent, student, or a person who simply needs a boost of energy throughout the day. Conquer your day with <span class='text-highlight'> MANA!</span> </p>",
+  "section_4_title": "OUR PRODUCTS",
+  "section_4_products": [
+    {
+      "slide": [
+        {
+          "product_name": "Mana (30 Capsules)",
+          "product_image": "manaBottle",
+          "product_desc": "Lorem ipsum dolor sit amet, consectetur",
+          "product_price": "$34.99",
+          "product_star": 4
+        },
+        {
+          "product_name": "Mana 3x Supply",
+          "product_image": "manaBottle",
+          "product_desc": "Lorem ipsum dolor sit amet, consectetur",
+          "product_price": "$53.99",
+          "product_star": 5
+        },
+        {
+          "product_name": "Mana Case",
+          "product_image": "manaBottle",
+          "product_desc": "Lorem ipsum dolor sit amet, consectetur",
+          "product_price": "$191.99",
+          "product_star": 4
+        }
+      ]
+    },
+    {
+      "slide": [
+        {
+          "product_name": "Mana (30 Capsules)",
+          "product_image": "manaBottle",
+          "product_desc": "Lorem ipsum dolor sit amet, consectetur",
+          "product_price": "$33.99",
+          "product_star": 4
+        },
+        {
+          "product_name": "Mana 3x Supply",
+          "product_image": "manaBottle",
+          "product_desc": "Lorem ipsum dolor sit amet, consectetur",
+          "product_price": "$52.99",
+          "product_star": 5
+        },
+        {
+          "product_name": "Mana Case",
+          "product_image": "manaBottle",
+          "product_desc": "Lorem ipsum dolor sit amet, consectetur",
+          "product_price": "$190.99",
+          "product_star": 4
+        }
+      ]
+    }
+  ],
+  "section_5_title": "MANA LIFE <br /> ENERGY SHOTS",
+  "section_5_content": "<span class='text-highlight'>MANA Life shots</span> give you quick energy boost in the healthiest way possible. Formulated from the purest blend of natural herbs, say goodbye to jitters and focus on getting an extra boost in your energy levels and enhancing athletic performance every day!",
+  "section_6_title": "MANA LIFE <br /> IMMUNITY SHOTS",
+  "section_6_content": "<span class='text-highlight'>MANA Life shots</span> are packed with the healthiest ingredients to help you sustain a healthy body! Whether you want to fight off colds and flu or simple strenthen you immunity defense, immunity shots are your regular dose of potent vitamin C.",
+  "section_7": [
+    {
+      "img_name": "benefitsImg1"
+    },
+    {
+      "img_name": "benefitsImg2"
+    },
+    {
+      "img_name": "benefitsImg3"
+    }
+  ]
+}
