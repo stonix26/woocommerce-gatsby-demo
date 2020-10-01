@@ -8,7 +8,7 @@ import { Card, Container } from "react-bootstrap"
 export default function Blogs({ data }) {
   return (
     <Layout>
-      <SEO title="home" />
+      <SEO title="BLOGS" />
       {data.allWpPost.nodes.map(node => (
         <Container>
           <Card>
