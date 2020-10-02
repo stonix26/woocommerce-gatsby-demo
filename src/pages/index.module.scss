@@ -169,3 +169,42 @@
     line-height: 1.8em;
   }
 }
+
+.benefits-section {
+  background-color: #f9f9f9;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+
+  h4 {
+    text-align: center;
+    color: $color-secondary;
+    font-weight: 700;
+    font-size: 2.5em;
+    margin-bottom: 3.5rem;
+  }
+
+  .benefits-card {
+    text-align: center;
+    p {
+      margin-top: 1.5rem;
+      color: $color-secondary;
+      font-weight: 800;
+      font-size: 1.2em;
+    }
+  }
+}
+
+.whats-mana-section {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+
+  h5 {
+    color: $color-secondary;
+    font-weight: 700;
+    font-size: 2.5em;
+    margin-bottom: 3rem;
+  }
+  p {
+    font-size: 1.3em;
+  }
+}

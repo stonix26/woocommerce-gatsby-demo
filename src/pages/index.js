@@ -33,7 +33,10 @@ export default function Home({ data }) {
     section_5_content,
     section_6_title,
     section_6_content,
-    section_7,
+    mana_benefits_title,
+    mana_benefits,
+    section_8_title,
+    section_8_desc,
   } = jsonData
 
   return (
@@ -200,38 +203,58 @@ export default function Home({ data }) {
           </Col>
         </Row>
       </Container>
-      <Container>
+      <Container fluid className={styles.benefitsSection}>
         <Row>
           <Col>
-            <h4>BENEFITS OF MANA</h4>
+            <h4>{mana_benefits_title}</h4>
           </Col>
         </Row>
         <Carousel
           controls={true}
           indicators={false}
           nextIcon={
-            <MdNavigateNext style={{ fontSize: "2.5em", opacity: "0.75" }} />
+            <MdNavigateNext
+              style={{ fontSize: "2.5em", color: "black", opacity: "0.5" }}
+            />
           }
           prevIcon={
-            <MdNavigateBefore style={{ fontSize: "2.5em", opacity: "0.75" }} />
+            <MdNavigateBefore
+              style={{ fontSize: "2.5em", color: "black", opacity: "0.5" }}
+            />
           }
         >
           <Carousel.Item>
             <Container>
               <Row>
-                {section_7.map((item, index) => (
-                  <Col key={index}>
+                {mana_benefits.map((item, index) => (
+                  <Col className={styles.benefitsCard} key={index}>
                     <Img
                       fluid={data[item.img_name].childImageSharp.fluid}
                       objectFit="cover"
                       alt="Mana"
                     />
+                    <p>{item.desc}</p>
                   </Col>
                 ))}
               </Row>
             </Container>
           </Carousel.Item>
         </Carousel>
+      </Container>
+      <Container className={styles.whatsManaSection}>
+        <Row className="align-items-center">
+          <Col md="7">
+            <h5>{section_8_title}</h5>
+            <p dangerouslySetInnerHTML={{ __html: section_8_desc }} />
+          </Col>
+          <Col md="5">
+            <Img
+              fluid={data.benefitsImg2.childImageSharp.fluid}
+              objectFit="cover"
+              alt="Mana"
+            />
+          </Col>
+        </Row>
       </Container>
     </Layout>
   )

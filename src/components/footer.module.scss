@@ -1,0 +1,64 @@
+@import "../styles/style.scss";
+
+.footer {
+  padding-bottom: 0;
+
+  .footer-row-menu {
+    padding: 2rem 0;
+
+    .menu-title {
+      color: $color-secondary;
+      font-weight: 700;
+      font-size: 1.2em;
+    }
+    .logo-container {
+      padding-right: 2em;
+    }
+    .menu-container {
+      display: flex;
+      flex-direction: column;
+
+      .menu {
+        color: $color-secondary;
+        &:hover {
+          text-decoration: none;
+          color: $color-primary;
+        }
+      }
+    }
+    .social-container {
+      display: flex;
+      a {
+        margin-right: 1em;
+        color: $color-secondary;
+
+        &:hover {
+          color: $color-primary;
+        }
+      }
+    }
+    .footer-form {
+      label {
+        color: $color-secondary;
+      }
+      input[type="email"] {
+        border: solid 1px $color-secondary;
+        opacity: 0.5;
+        border-radius: 2em;
+      }
+      button[type="submit"] {
+        background-color: $color-primary;
+        border-color: $color-primary;
+        border-radius: 3em;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .footer-col {
+    padding: 1rem 0;
+    p {
+      margin-bottom: 0;
+    }
+  }
+}

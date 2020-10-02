@@ -1,10 +1,3 @@
-const activeEnv =
-  process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || "development"
-console.log(`Using environment config: '${activeEnv}'`)
-require("dotenv").config({
-  path: `.env.${activeEnv}`,
-})
-
 module.exports = {
   siteMetadata: {
     title: `Mana Life Energy`,
@@ -15,9 +8,7 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress-experimental`,
       options: {
-        url:
-          process.env.GATSBY_API_URL_AT_HOME ||
-          process.env.GATSBY_API_URL_AT_OFFICE,
+        url: `http://gastby-woocommerce.local/graphql`,
       },
     },
     `gatsby-plugin-react-helmet`,

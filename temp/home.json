@@ -79,15 +79,21 @@
   "section_5_content": "<span class='text-highlight'>MANA Life shots</span> give you quick energy boost in the healthiest way possible. Formulated from the purest blend of natural herbs, say goodbye to jitters and focus on getting an extra boost in your energy levels and enhancing athletic performance every day!",
   "section_6_title": "MANA LIFE <br /> IMMUNITY SHOTS",
   "section_6_content": "<span class='text-highlight'>MANA Life shots</span> are packed with the healthiest ingredients to help you sustain a healthy body! Whether you want to fight off colds and flu or simple strenthen you immunity defense, immunity shots are your regular dose of potent vitamin C.",
-  "section_7": [
+  "mana_benefits_title": "BENEFITS OF MANA",
+  "mana_benefits": [
     {
-      "img_name": "benefitsImg1"
+      "img_name": "benefitsImg1",
+      "desc": "Alternative to Coffee/Energy Drinks"
     },
     {
-      "img_name": "benefitsImg2"
+      "img_name": "benefitsImg2",
+      "desc": "Increased Energy, Mental Clarity, Focus, and Alertness"
     },
     {
-      "img_name": "benefitsImg3"
+      "img_name": "benefitsImg3",
+      "desc": "Enhanced ATP Production"
     }
-  ]
+  ],
+  "section_8_title": "WHAT'S IN MANA",
+  "section_8_desc": "<span class='text-highlight'>MANA</span> is formulated with a blend of premium, plant-based extracts and herbs to help create a combustion of natural energy, mental clarity, focus and performance."
 }

@@ -3,6 +3,11 @@
 @import "layout";
 @import "navbar";
 
+::selection {
+  background-color: $color-primary;
+  color: white;
+}
+
 .mana-btn-primary {
   background-color: $color-primary;
   color: white;
